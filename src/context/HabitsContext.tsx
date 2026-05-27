@@ -42,8 +42,20 @@ const HabitsProvider = ({ children }: PropsWithChildren) => {
     const removedHabit = allHabits.find((h) => h.id === habitId);
     if (!removedHabit) return;
 
-    setAllHabits((prev) => prev.filter((h) => h.id !== habitId));
     setBin((prev) => [removedHabit, ...prev]);
+    setAllHabits((prev) => prev.filter((h) => h.id !== habitId));
+  };
+
+  const returnHabit = (habitId: string): void => {
+    const returnedHabit = bin.find((h) => h.id === habitId);
+    if (!returnedHabit) return;
+
+    setAllHabits((prev) => [returnedHabit, ...prev]);
+    setBin((prev) => prev.filter((h) => h.id !== habitId));
+  };
+
+  const permanentlyRemoveHabit = (habitId: string): void => {
+    setBin((prev) => prev.filter((h) => h.id !== habitId));
   };
 
   const value: IHabitContextValue = {
@@ -54,6 +66,8 @@ const HabitsProvider = ({ children }: PropsWithChildren) => {
     addHabit,
     toggleDoneHabit,
     moveToBin,
+    permanentlyRemoveHabit,
+    returnHabit,
     isFormOpen,
     setIsFormOpen,
   };

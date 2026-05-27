@@ -1,19 +1,18 @@
 import { useContext } from 'react';
 import { HabitsContext } from '../context/HabitsContext';
-import { TrashIcon, CheckIcon } from '@phosphor-icons/react';
+import { TrashIcon, ArrowsClockwiseIcon } from '@phosphor-icons/react';
 import type { ICategoryValues } from '../types/TodoCards.types';
 
-interface ITodoCard {
+interface IBinTodoCard {
   todo: {
     id: string;
-    isDone: boolean;
     category: keyof ICategoryValues | string;
     heading: string;
     description?: string;
   };
 }
 
-const TodoCard = ({ todo }: ITodoCard) => {
+const BinTodoCard = ({ todo }: IBinTodoCard) => {
   const context = useContext(HabitsContext);
 
   const categoryValues: ICategoryValues = {
@@ -39,14 +38,14 @@ const TodoCard = ({ todo }: ITodoCard) => {
 
         <div className="flex gap-1 items-center">
           <button
-            onClick={() => context?.toggleDoneHabit(todo.id)}
-            className={`w-8 h-8 ${todo.isDone ? 'text-[#ffffff] bg-[#5ea362]' : 'text-[#7c7c7c]'} rounded-[50%] font-semibold flex justify-center items-center bottom-0 cursor-pointer active:scale-90  duration-100`}
+            onClick={() => context?.returnHabit(todo.id)}
+            className="w-8 h-8 text-[#0088ff] rounded-[50%] font-semibold flex justify-center items-center bottom-0 cursor-pointer active:scale-90  duration-100"
           >
-            <CheckIcon size={20} />
+            <ArrowsClockwiseIcon size={20} />
           </button>
 
           <button
-            onClick={() => context?.moveToBin(todo.id)}
+            onClick={() => context?.permanentlyRemoveHabit(todo.id)}
             className="w-10 h-10 rounded-[10px] text-[#b0b0b0] font-semibold flex justify-center items-center bottom-0 cursor-pointer active:scale-90 hover:text-[#d76f6f] duration-100"
           >
             <TrashIcon size={24} />
@@ -63,4 +62,4 @@ const TodoCard = ({ todo }: ITodoCard) => {
   );
 };
 
-export default TodoCard;
+export default BinTodoCard;

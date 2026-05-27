@@ -1,21 +1,14 @@
-import { useContext } from 'react';
-import { HabitsContext } from '../context/HabitsContext';
-import { TrashIcon, CheckIcon } from '@phosphor-icons/react';
 import type { ICategoryValues } from '../types/TodoCards.types';
 
-interface ITodoCard {
+interface IDoneTodoCard {
   todo: {
-    id: string;
-    isDone: boolean;
     category: keyof ICategoryValues | string;
     heading: string;
     description?: string;
   };
 }
 
-const TodoCard = ({ todo }: ITodoCard) => {
-  const context = useContext(HabitsContext);
-
+const DoneTodoCard = ({ todo }: IDoneTodoCard) => {
   const categoryValues: ICategoryValues = {
     health: { emoji: '💪🏻', circleColor: 'bg-[#aae7ce]' },
     mind: { emoji: '🧠', circleColor: 'bg-[#d2aae7]' },
@@ -36,22 +29,6 @@ const TodoCard = ({ todo }: ITodoCard) => {
         >
           {categoryValues[currentCategory].emoji}
         </div>
-
-        <div className="flex gap-1 items-center">
-          <button
-            onClick={() => context?.toggleDoneHabit(todo.id)}
-            className={`w-8 h-8 ${todo.isDone ? 'text-[#ffffff] bg-[#5ea362]' : 'text-[#7c7c7c]'} rounded-[50%] font-semibold flex justify-center items-center bottom-0 cursor-pointer active:scale-90  duration-100`}
-          >
-            <CheckIcon size={20} />
-          </button>
-
-          <button
-            onClick={() => context?.moveToBin(todo.id)}
-            className="w-10 h-10 rounded-[10px] text-[#b0b0b0] font-semibold flex justify-center items-center bottom-0 cursor-pointer active:scale-90 hover:text-[#d76f6f] duration-100"
-          >
-            <TrashIcon size={24} />
-          </button>
-        </div>
       </div>
 
       <h3 className="text-[#313131] text-[18px] font-semibold wrap-break-word">
@@ -59,8 +36,10 @@ const TodoCard = ({ todo }: ITodoCard) => {
       </h3>
 
       <p className="text-[#7b7b7b] wrap-break-word">{todo.description}</p>
+
+      <p className="text-[#81c370] text-[14px] font-bold">DONE!</p>
     </div>
   );
 };
 
-export default TodoCard;
+export default DoneTodoCard;

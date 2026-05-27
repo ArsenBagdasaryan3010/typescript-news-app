@@ -15,6 +15,8 @@ export interface IHabitContextValue {
   addHabit: (category: string, heading: string, description: string) => void;
   toggleDoneHabit: (habidId: string) => void;
   moveToBin: (habidId: string) => void;
+  permanentlyRemoveHabit: (habitId: string) => void;
+  returnHabit: (habitId: string) => void;
   isFormOpen: boolean;
   setIsFormOpen: (value: boolean) => void;
 }
