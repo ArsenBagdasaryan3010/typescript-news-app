@@ -17,7 +17,7 @@ const Work = () => {
         {context?.allHabits.some((h) => h.category === 'work') ? (
           context?.allHabits
             .filter((h) => h.category === 'work')
-            .map((todo) => <TodoCard todo={todo} />)
+            .map((todo) => <TodoCard todo={todo} key={todo.id} />)
         ) : (
           <h1 className="w-full text-center mt-20 text-[28px] font-medium text-[#8d8d8d]">
             Work on your projects 💻

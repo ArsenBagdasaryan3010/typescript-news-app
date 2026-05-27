@@ -25,7 +25,9 @@ const Dashboard = () => {
 
       <div className="flex flex-wrap gap-2.5 overflow-y-auto pb-10">
         {context?.allHabits.length ? (
-          context?.allHabits.map((todo) => <TodoCard todo={todo} />)
+          context?.allHabits.map((todo) => (
+            <TodoCard todo={todo} key={todo.id} />
+          ))
         ) : (
           <h1 className="w-full text-center mt-20 text-[28px] font-medium text-[#8d8d8d]">
             Add a task to start working 🔥

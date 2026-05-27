@@ -12,7 +12,7 @@ const DoneHabits = () => {
         {context?.allHabits.some((h) => h.isDone === true) ? (
           context?.allHabits
             .filter((h) => h.isDone === true)
-            .map((todo) => <DoneTodoCard todo={todo} />)
+            .map((todo) => <DoneTodoCard todo={todo} key={todo.id} />)
         ) : (
           <h1 className="text-[#c1c1c1]">There is no done tasks. 🥱</h1>
         )}
