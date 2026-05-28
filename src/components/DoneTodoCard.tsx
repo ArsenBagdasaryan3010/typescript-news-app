@@ -35,9 +35,11 @@ const DoneTodoCard = ({ todo }: IDoneTodoCard) => {
         {todo.heading}
       </h3>
 
-      <p className="text-[#7b7b7b] wrap-break-word">{todo.description}</p>
+      <p className="text-[#7b7b7b] wrap-break-word line-through">
+        {todo.description}
+      </p>
 
-      <p className="text-[#81c370] text-[14px] font-bold">DONE!</p>
+      <p className="text-[#81c370] text-[14px] font-bold line-through">DONE!</p>
     </div>
   );
 };

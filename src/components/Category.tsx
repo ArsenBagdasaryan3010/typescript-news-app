@@ -10,13 +10,13 @@ import TodoCard from '../components/TodoCard';
 
 interface ICategoryPage {
   pageParams: {
-    name: string;
+    name: 'Health' | 'Mind' | 'Work' | 'Other';
     icon:
       | typeof BarbellIcon
       | typeof BrainIcon
       | typeof LaptopIcon
       | typeof PuzzlePieceIcon;
-    thisCategory: string;
+    thisCategory: 'health' | 'mind' | 'work' | 'other';
     describtion: string;
   };
 }
