@@ -7,7 +7,7 @@ const Health = () => {
       pageParams={{
         name: 'Health',
         icon: BarbellIcon,
-        describtion: 'Start health life. Train, Sleep, Eat 💪🏻',
+        description: 'Start health life. Train, Sleep, Eat 💪🏻',
         thisCategory: 'health',
       }}
     />

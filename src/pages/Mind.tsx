@@ -7,7 +7,7 @@ const Mind = () => {
       pageParams={{
         name: 'Mind',
         icon: BrainIcon,
-        describtion: 'Develop your mind 🧠',
+        description: 'Develop your mind 🧠',
         thisCategory: 'mind',
       }}
     />

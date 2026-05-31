@@ -7,7 +7,7 @@ const Work = () => {
       pageParams={{
         name: 'Work',
         icon: LaptopIcon,
-        describtion: 'Work on your projects',
+        description: 'Work on your projects 💻',
         thisCategory: 'work',
       }}
     />

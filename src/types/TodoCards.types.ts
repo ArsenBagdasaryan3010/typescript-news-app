@@ -1,10 +1,10 @@
 interface ICategoryValueObj {
   emoji: '💪🏻' | '🧠' | '💻' | '🧩';
   circleColor:
-    | 'bg-[#aae7ce]'
-    | 'bg-[#d2aae7]'
-    | 'bg-[#aabce7]'
-    | 'bg-[#e7c0aa]';
+    | 'bg-[#BF6969]'
+    | 'bg-[#BB69BF]'
+    | 'bg-[#7585B8]'
+    | 'bg-[#69BFA5]';
 }
 
 export interface ICategoryValues {

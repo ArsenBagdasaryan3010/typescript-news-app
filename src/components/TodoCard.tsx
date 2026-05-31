@@ -17,10 +17,10 @@ const TodoCard = ({ todo }: ITodoCard) => {
   const context = useContext(HabitsContext);
 
   const categoryValues: ICategoryValues = {
-    health: { emoji: '💪🏻', circleColor: 'bg-[#aae7ce]' },
-    mind: { emoji: '🧠', circleColor: 'bg-[#d2aae7]' },
-    work: { emoji: '💻', circleColor: 'bg-[#aabce7]' },
-    other: { emoji: '🧩', circleColor: 'bg-[#e7c0aa]' },
+    health: { emoji: '💪🏻', circleColor: 'bg-[#BF6969]' },
+    mind: { emoji: '🧠', circleColor: 'bg-[#BB69BF]' },
+    work: { emoji: '💻', circleColor: 'bg-[#7585B8]' },
+    other: { emoji: '🧩', circleColor: 'bg-[#69BFA5]' },
   };
 
   const currentCategory =
@@ -32,7 +32,7 @@ const TodoCard = ({ todo }: ITodoCard) => {
     <div className="p-3 flex flex-col border bg-[#f7f7f7] border-[#fcfcfc] w-full rounded-[20px] gap-3 shadow-soft-minimal cursor-pointer relative duration-200 active:scale-98">
       <div className="flex justify-between">
         <div
-          className={`w-10 h-10 rounded-[50%] ${categoryValues[currentCategory].circleColor} flex justify-center items-center`}
+          className={`w-10 h-10 rounded-[50%] ${categoryValues[currentCategory].circleColor} flex justify-center items-center text-[20px]`}
         >
           {categoryValues[currentCategory].emoji}
         </div>

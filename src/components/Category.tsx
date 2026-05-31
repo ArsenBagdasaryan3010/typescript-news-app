@@ -17,7 +17,7 @@ interface ICategoryPage {
       | typeof LaptopIcon
       | typeof PuzzlePieceIcon;
     thisCategory: 'health' | 'mind' | 'work' | 'other';
-    describtion: string;
+    description: string;
   };
 }
 
@@ -42,7 +42,7 @@ const Category = ({ pageParams }: ICategoryPage) => {
             .map((todo) => <TodoCard todo={todo} key={todo.id} />)
         ) : (
           <h1 className="w-full text-center mt-20 text-[28px] font-medium text-[#8d8d8d]">
-            {pageParams.describtion}
+            {pageParams.description}
           </h1>
         )}
       </div>

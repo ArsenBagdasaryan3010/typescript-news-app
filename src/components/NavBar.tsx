@@ -14,7 +14,7 @@ const NavBar = () => {
   const activeItem = 'text-[#0088ff] bg-[#e9e9e9]';
 
   return (
-    <div className="h-full w-[18%] border-r border-[#e5e5e5] bg-[#f1f1f1] flex flex-col p-3 gap-1">
+    <div className="h-full w-[18%] border-r border-[#eeeeee] bg-[#f1f1f1] flex flex-col p-3 gap-1">
       <NavLink
         className={({ isActive }) =>
           isActive ? `${navItemStyle} ${activeItem}` : navItemStyle

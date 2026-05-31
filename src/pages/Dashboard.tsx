@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div className="h-full w-[56%] flex flex-col px-10">
       <header className="flex justify-between items-center py-5">
         <h1 className="text-[30px] font-bold text-[#313131]">
-          {dayjs().format('ddd, DD MMM')}
+          {dayjs().format('dddd, DD MMM')}
         </h1>
         <button
           onClick={() => context?.setIsFormOpen(!context.isFormOpen)}

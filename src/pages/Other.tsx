@@ -7,7 +7,7 @@ const Other = () => {
       pageParams={{
         name: 'Other',
         icon: PuzzlePieceIcon,
-        describtion: 'Other activities 🧩',
+        description: 'Other activities 🧩',
         thisCategory: 'other',
       }}
     />
